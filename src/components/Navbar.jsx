@@ -85,11 +85,8 @@ const Navbar = ({ userSanity }) => {
 		setIcon(<AiFillCheckCircle size="2rem" />);
 		setTimeout(() => {
 			setIsAlert(false);
-			router.push("/");
+			router.reload();
 		}, 1000);
-		setTimeout(() => {
-			window.location.reload();
-		}, 3000);
 	};
 
 	const handleLogout = () => {
