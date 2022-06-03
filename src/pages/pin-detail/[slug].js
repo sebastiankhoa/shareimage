@@ -24,6 +24,7 @@ const PinDetail = ({ pins, pinsMore, pinId }) => {
 		const user = router.query;
 		setUsers(user);
 	}, [users]);
+	console.log({ users });
 
 	if (!pins)
 		return (
@@ -109,7 +110,7 @@ const PinDetail = ({ pins, pinsMore, pinId }) => {
 					</Flex>
 				</Flex>
 			</Flex>
-			{users ? (
+			{users?.uid ? (
 				<Flex gap="2" align="center" my="5" w={{ base: "80%", lg: "60%" }} border="1px" p="2" rounded="xl" shadow="lg" mx="auto">
 					<Img src={users?.photoURL} w="8" h="8" rounded="full" />
 					<Input
