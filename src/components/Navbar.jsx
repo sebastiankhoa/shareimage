@@ -85,7 +85,7 @@ const Navbar = ({ userSanity }) => {
 		setIcon(<AiFillCheckCircle size="2rem" />);
 		setTimeout(() => {
 			setIsAlert(false);
-			router.reload();
+			router.push("/");
 		}, 1000);
 	};
 
