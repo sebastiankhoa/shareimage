@@ -181,20 +181,22 @@ const Navbar = ({ userSanity }) => {
 						/>
 					)}
 					{/* Nút tạo bài mới */}
-					<BsPlusSquareFill
-						color={scroll ? "white" : "unset"}
-						size="2.1rem"
-						cursor="pointer"
-						onClick={() =>
-							router.push(
-								{
-									pathname: "/create",
-									query: userSanity,
-								},
-								"create"
-							)
-						}
-					/>
+					{userSanity && (
+						<BsPlusSquareFill
+							color={scroll ? "white" : "unset"}
+							size="2.1rem"
+							cursor="pointer"
+							onClick={() =>
+								router.push(
+									{
+										pathname: "/create",
+										query: userSanity,
+									},
+									"create"
+								)
+							}
+						/>
+					)}
 				</Flex>
 				{showLogin && (
 					<Box position="absolute" right="10px" top="80px" className="rotate-center" zIndex={19}>
