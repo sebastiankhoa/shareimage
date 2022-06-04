@@ -24,7 +24,7 @@ const PinDetail = ({ pins, pinsMore, pinId }) => {
 		const user = router.query;
 		setUsers(user);
 	}, [users]);
-	console.log({ users });
+	// console.log({ users });
 
 	if (!pins)
 		return (
@@ -83,7 +83,7 @@ const PinDetail = ({ pins, pinsMore, pinId }) => {
 							</Flex>
 						</Link>
 						<Text fontFamily="serif" fontWeight="700" fontSize={{ base: "9pt", xl: "17pt" }}>
-							Tác giả: {users?.displayName}
+							Tác giả: {pins?.postedBy?.userName}
 						</Text>
 					</Flex>
 					<Text fontFamily="Pacifico" fontWeight="900" fontSize={{ base: "14pt", xl: "20pt" }} textAlign="center">
