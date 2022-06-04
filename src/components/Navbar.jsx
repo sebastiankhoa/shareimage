@@ -87,6 +87,10 @@ const Navbar = ({ userSanity }) => {
 			setIsAlert(false);
 			router.push("/");
 		}, 1000);
+		setTimeout(() => {
+			setIsAlert(false);
+			router.reload();
+		}, 2500);
 	};
 
 	const handleLogout = () => {

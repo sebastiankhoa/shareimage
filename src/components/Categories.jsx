@@ -36,7 +36,7 @@ const Categories = () => {
 						transition="2s ease"
 					/>
 					<Text
-						fontSize={["8pt", "15pt"]}
+						fontSize={["8pt", "13pt"]}
 						textTransform="capitalize"
 						fontWeight="700"
 						fontFamily="serif"
