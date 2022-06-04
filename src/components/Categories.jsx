@@ -3,9 +3,12 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import { categories } from "../../utils/data";
+import { useSetRecoilState } from "recoil";
+import { SidebarState } from "../../atom/state";
 
 const Categories = () => {
 	const router = useRouter();
+	const setMiniSidebar = useSetRecoilState(SidebarState);
 
 	return (
 		<Flex direction="column" gap="5">
@@ -16,20 +19,24 @@ const Categories = () => {
 					gap="2"
 					align="center"
 					cursor="pointer"
-					onClick={() => router.replace(`/category/${cat.name}`)}
+					onClick={() => {
+						router.push(`/category/${cat.name}`);
+						setMiniSidebar(false);
+					}}
 					role="group"
 				>
 					<Image
 						src={cat.image}
 						alt=""
 						rounded="full"
-						w="10"
-						h="10"
+						w={["7", "10"]}
+						h={["7", "10"]}
 						objectFit="cover"
 						_groupHover={{ transform: "rotate(180deg)" }}
 						transition="2s ease"
 					/>
 					<Text
+						fontSize={["8pt", "15pt"]}
 						textTransform="capitalize"
 						fontWeight="700"
 						fontFamily="serif"
